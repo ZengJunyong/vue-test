@@ -20,10 +20,10 @@
     <table>
       <tr class="header">
         <th class="float-left">
-          <button type="button">取消排序</button>
+          <button type="button" @click="cancelSort()">取消排序</button>
         </th>
         <th class="clickable" @click="sortByPrice()">最新价 <span v-if="sortPrice">↑</span><span v-else>↓</span></th>
-        <th>涨跌幅 ↓</th>
+        <th class="clickable" @click="sortByPercent()">涨跌幅 <span v-if="sortPercent">↑</span><span v-else>↓</span></th>
       </tr>
       <tr v-for="s in stocks">
         <td>{{s.stockName}}
@@ -62,9 +62,11 @@
     data () {
       return {
         sortPrice: false,
+        sortPercent: false,
         stocks: [
-          {stockName: '上证指数', subTitle: 'SH000001', price: 2483.09, percent: -0.0061},
+          {order: 0, stockName: '上证指数', subTitle: 'SH000001', price: 2483.09, percent: -0.0061},
           {
+            order: 1,
             stockName: '标普500ETF-SPDR',
             subTitle: 'SPY',
             blueMark: 'US',
@@ -74,11 +76,16 @@
             percentDetail1: '-1.47%',
             percentDetail2: '盘前'
           },
-          {stockName: '小米集团-W', subTitle: '01810', pinkMark: 'HK', price: 12.92, percent: -0.0182}
+          {order: 2, stockName: '小米集团-W', subTitle: '01810', pinkMark: 'HK', price: 12.92, percent: -0.0182}
         ]
       }
     },
     methods: {
+      cancelSort () {
+        this.stocks.sort((a, b) => {
+          return a.order - b.order
+        })
+      },
       sortByPrice () {
         this.sortPrice = !this.sortPrice
         this.stocks.sort((a, b) => {
@@ -86,6 +93,16 @@
             return a.price - b.price
           } else {
             return b.price - a.price
+          }
+        })
+      },
+      sortByPercent () {
+        this.sortPercent = !this.sortPercent
+        this.stocks.sort((a, b) => {
+          if (this.sortPercent) {
+            return a.percent - b.percent
+          } else {
+            return b.percent - a.percent
           }
         })
       }
