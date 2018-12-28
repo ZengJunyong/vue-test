@@ -5,7 +5,7 @@
       <div>自选</div>
       <div><img src="./assets/search.png"></div>
     </div>
-    <div id="connection_error"><a class="check" href="#">检查设置</a> <span><img
+    <div v-if="global.connectionError" id="connection_error"><a class="check" href="#">检查设置</a> <span><img
       src="./assets/error.png">网络连接中断，请检查后重试</span></div>
     <ul id="nav">
       <li>全部</li>
@@ -61,6 +61,7 @@
     name: 'app',
     data () {
       return {
+        global: window.global,
         sortPrice: false,
         sortPercent: false,
         stocks: []
