@@ -67,11 +67,15 @@
       }
     },
     mounted () {
-      this.$http.get('./static/data.json').then((res) => {
-        this.stocks = Object.assign({}, this.stocks, res.data.stocks)
-      })
+      this.fetchData()
+      setInterval(this.fetchData, 10 * 1000)
     },
     methods: {
+      fetchData () {
+        this.$http.get('./static/data.json').then((res) => {
+          this.stocks = Object.assign({}, this.stocks, res.data.stocks)
+        })
+      },
       cancelSort () {
         this.stocks.sort((a, b) => {
           return a.order - b.order
