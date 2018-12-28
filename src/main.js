@@ -7,10 +7,7 @@ Vue.use(VueResource)
 window.global = {connectionError: false}
 Vue.http.interceptors.push((req, next) => {
   next((res) => {
-    debugger
-    if (res.status * 1 === 404) {
-      window.global.connectionError = true
-    }
+    window.global.connectionError = res.status * 1 === 404
     return res
   })
 })
