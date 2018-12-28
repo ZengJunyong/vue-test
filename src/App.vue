@@ -153,6 +153,7 @@
   #connection_error a.check {
     text-decoration: none;
     float: right;
+    color: #425171;
   }
 
   #connection_error img {
