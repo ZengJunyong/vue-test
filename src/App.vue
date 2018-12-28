@@ -74,7 +74,7 @@
     methods: {
       fetchData () {
         this.$http.get('./static/data.json').then((res) => {
-          this.stocks = Object.assign({}, this.stocks, res.data.stocks)
+          this.stocks = res.data
         })
       },
       cancelSort () {

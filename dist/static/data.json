@@ -1,30 +1,29 @@
-{
-  "stocks": [
-    {
-      "order": 0,
-      "stockName": "上证指数",
-      "subTitle": "SH000001",
-      "price": 2483.09,
-      "percent": -0.0061
-    },
-    {
-      "order": 1,
-      "stockName": "标普500ETF-SPDR",
-      "subTitle": "SPY",
-      "blueMark": "US",
-      "price": 246.18,
-      "pre": 242.56,
-      "percent": 0.0505,
-      "percentDetail1": "-1.47%",
-      "percentDetail2": "盘前"
-    },
-    {
-      "order": 2,
-      "stockName": "小米集团-W",
-      "subTitle": "01810",
-      "pinkMark": "HK",
-      "price": 12.92,
-      "percent": -0.0182
-    }
-  ]
-}
+[
+  {
+    "order": 0,
+    "stockName": "上证指数",
+    "subTitle": "SH000001",
+    "price": 2483.09,
+    "percent": -0.0061
+  },
+  {
+    "order": 1,
+    "stockName": "标普500ETF-SPDR",
+    "subTitle": "SPY",
+    "blueMark": "US",
+    "price": 246.18,
+    "pre": 242.56,
+    "percent": 0.0505,
+    "percentDetail1": "-1.47%",
+    "percentDetail2": "盘前"
+  },
+  {
+    "order": 2,
+    "stockName": "小米集团-W",
+    "subTitle": "01810",
+    "pinkMark": "HK",
+    "price": 12.92,
+    "percent": -0.0182
+  }
+]
+
