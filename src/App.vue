@@ -45,14 +45,12 @@
         </td>
       </tr>
     </table>
-    <table id="bottom">
-      <tr>
-        <td>标普500</td>
-        <td class="up">2467.70</td>
-        <td class="up">+116.60</td>
-        <td class="up">+4.96% ⌃</td>
-      </tr>
-    </table>
+    <div id="bottom">
+      <div>标普500</div>
+      <div class="up">2467.70</div>
+      <div class="up">+116.60</div>
+      <div class="up">+4.96% <span class="white">⌃</span></div>
+    </div>
   </div>
 </template>
 
@@ -106,6 +104,7 @@
     min-width: 320px;
     max-width: 450px;
     width: 100%;
+    position: relative;
   }
 
   .float-left {
@@ -194,6 +193,7 @@
 
   td {
     text-align: center;
+    padding-bottom: 12px;
   }
 
   td:first-child {
@@ -250,13 +250,22 @@
   }
 
   #bottom {
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    padding: 5px;
-    width: calc(100% - 63px);
+    right: 0;
+    padding: 9px 0;
+    font-size: 14px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background: #171a23;
   }
 
   .clickable {
     cursor: pointer;
+  }
+
+  .white {
+    color: white
   }
 </style>
