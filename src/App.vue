@@ -245,6 +245,7 @@
     padding-bottom: 12px;
     color: #c1c5c4;
     border-bottom: 1px solid #0c0f17;
+    padding-top: 6px;
   }
 
   td:first-child,th:first-child {
@@ -262,17 +263,22 @@
     color: rgba(128, 128, 128, 0.61);
   }
 
+  td button{
+    font-size: 16px;
+    width: 95px;
+    padding: 6px;
+    color: white;
+    text-align: right;
+    border: none;
+    border-radius: 3px;
+  }
+
   .down {
     color: green;
   }
 
   .down-button {
     background: green;
-    color: white;
-    border: none;
-    padding: 8px;
-    width: 70px;
-    text-align: right;
   }
 
   .up {
@@ -281,20 +287,19 @@
 
   .up-button {
     background: red;
-    color: white;
-    border: none;
-    padding: 8px;
-    width: 70px;
-    text-align: right;
   }
 
+  .blue-mark, .pink-mark {
+    border-radius: 2px;
+    padding: 0 3px;
+  }
   .blue-mark {
-    background: blue;
+    background: #1d76d5;
     color: black;
   }
 
   .pink-mark {
-    background: #9f3bc4;
+    background: #a338cb;
     color: black;
   }
 
