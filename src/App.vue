@@ -25,8 +25,8 @@
         <th class="float-left">
           <button type="button" @click="cancelSort()">取消排序</button>
         </th>
-        <th class="clickable" @click="sortByPrice()">最新价 <span v-if="sortPrice">↑</span><span v-else>↓</span></th>
-        <th class="clickable" @click="sortByPercent()">涨跌幅 <span v-if="sortPercent">↑</span><span v-else>↓</span></th>
+        <th class="clickable" @click="sort('price')">最新价 <span v-if="sortPrice">↑</span><span v-else>↓</span></th>
+        <th class="clickable" @click="sort('percent')">涨跌幅 <span v-if="sortPercent">↑</span><span v-else>↓</span></th>
       </tr>
       <tr v-for="s in stocks">
         <td>{{s.stockName}}
@@ -58,13 +58,13 @@
 </template>
 
 <script>
-  import Hello from './components/Hello'
-
   export default {
     name: 'app',
     data () {
       return {
         global: window.global,
+        price: false, // 按价格排序的升降标志
+        percent: false, // 按涨跌幅排序的升降标志
         sortPrice: false,
         sortPercent: false,
         stocks: [],
@@ -73,12 +73,13 @@
     },
     mounted () {
       setTimeout(this.fetchData, 3000) // TODO 故意延迟了3秒，不然看不到: 数据加载中...
-      setInterval(this.fetchData, 10 * 1000)
+      setInterval(this.fetchData, 10 * 1000) // 10s 取一次数据
     },
     methods: {
       fetchData () {
         this.$http.get('./static/data.json', {
           before (request) {
+            // https://github.com/pagekit/vue-resource/blob/master/docs/recipes.md#abort-a-request
             if (this.previousRequest) {
               this.previousRequest.abort()
             }
@@ -93,29 +94,16 @@
           return a.order - b.order
         })
       },
-      sortByPrice () {
-        this.sortPrice = !this.sortPrice
+      sort (field) {
+        this[field] = !this[field]
         this.stocks.sort((a, b) => {
-          if (this.sortPrice) {
-            return a.price - b.price
+          if (this[field]) {
+            return a[field] - b[field]
           } else {
-            return b.price - a.price
-          }
-        })
-      },
-      sortByPercent () {
-        this.sortPercent = !this.sortPercent
-        this.stocks.sort((a, b) => {
-          if (this.sortPercent) {
-            return a.percent - b.percent
-          } else {
-            return b.percent - a.percent
+            return b[field] - a[field]
           }
         })
       }
-    },
-    components: {
-      Hello
     }
   }
 </script>
