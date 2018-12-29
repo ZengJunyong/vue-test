@@ -17,7 +17,10 @@
         <img src="./assets/sort.png">
       </li>
     </ul>
-    <table>
+    <div id="loading" v-if="stocks.length == 0">
+      数据加载中...
+    </div>
+    <table v-else>
       <tr class="header">
         <th class="float-left">
           <button type="button" @click="cancelSort()">取消排序</button>
@@ -68,7 +71,7 @@
       }
     },
     mounted () {
-      this.fetchData()
+      setTimeout(this.fetchData, 3000) // TODO 故意延迟了3秒，不然看不到: 数据加载中...
       setInterval(this.fetchData, 10 * 1000)
     },
     methods: {
@@ -281,5 +284,13 @@
 
   .white {
     color: white
+  }
+
+  #loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
   }
 </style>
