@@ -3,9 +3,10 @@
 <head><title>米粒一颗测试</title>
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width,initial-scale=1">
-  <link rel=stylesheet href=https://fonts.googleapis.com/earlyaccess/notosansscsliced.css>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel=stylesheet>
-  <style>html, body {
+  <link href="https://fonts.lug.ustc.edu.cn/css?family=Roboto" rel=stylesheet>
+  <style>@import url(//fonts.lug.ustc.edu.cn/earlyaccess/notosansscsliced.css);
+
+  html, body {
     height: 100%;
     padding: 0;
     margin: 0;
@@ -16,12 +17,19 @@
     display: flex;
     justify-content: center;
   }</style>
-  <link href=https://zengjunyong.github.io/vue-test/dist/static/css/app.4d9d0e269c903575d5a6072eeba4955b.css rel=stylesheet>
+  <link href=https://zengjunyong.github.io/vue-test/dist/static/css/app.1ad446ff72979490b32a585da3b410c9.css rel=stylesheet>
 </head>
 <body>
 <div id=app></div>
-<script type=text/javascript src=https://zengjunyong.github.io/vue-test/dist/static/js/manifest.669574144db3e7ba72f7.js></script>
-<script type=text/javascript src=https://zengjunyong.github.io/vue-test/dist/static/js/vendor.162e837872d6ef558826.js></script>
-<script type=text/javascript src=https://zengjunyong.github.io/vue-test/dist/static/js/app.49a94ca1fb3c4bbef9e8.js></script>
+<script>// Check that service workers are registered
+if ('serviceWorker' in navigator) {
+  // Use the window load event to keep the page load performant
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('static/sw.js')
+  })
+}</script>
+<script type=text/javascript src=https://zengjunyong.github.io/vue-test/dist/static/js/manifest.e0e659d59cee28be2d2c.js></script>
+<script type=text/javascript src=https://zengjunyong.github.io/vue-test/dist/static/js/vendor.c265241500a65d411991.js></script>
+<script type=text/javascript src=https://zengjunyong.github.io/vue-test/dist/static/js/app.ddd64827618c3e96260b.js></script>
 </body>
 </html>
