@@ -31,8 +31,18 @@
         <th>
           <button type="button" @click="cancelSort()">取消排序</button>
         </th>
-        <th class="clickable" @click="sort('price')">最新价 <span v-if="price">↑</span><span v-else>↓</span></th>
-        <th class="clickable" @click="sort('percent')">涨跌幅 <span v-if="percent">↑</span><span v-else>↓</span></th>
+        <th class="clickable" @click="sort('price')">
+          <div>最新价 <img src="./assets/sort1.png" alt=""></div>
+          <!--<span v-if="price">↑</span><span v-else>↓</span>-->
+        </th>
+        <th class="clickable" @click="sort('percent')">
+          <div>
+            涨跌幅
+            <img src="./assets/sort2.png" alt="">
+            <img class="mode" src="./assets/mode.png" alt="">
+          </div>
+           <!--<span v-if="percent">↑</span><span v-else>↓</span>-->
+        </th>
       </tr>
       <tr v-for="s in stocks">
         <td>{{s.stockName}}
@@ -226,6 +236,10 @@
     border-bottom: 1px solid #0b0e16;
   }
 
+  th .sort{
+    height: 15px;
+  }
+
   td {
     font-size: 16px;
     padding-bottom: 12px;
@@ -306,6 +320,22 @@
     cursor: pointer;
   }
 
+  .clickable div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .clickable div img{
+    height: 15px;
+    margin-left: 3px;
+  }
+
+ .clickable div img.mode{
+    height: 18px;
+    margin-left: 8px;
+  }
+
   .white {
     color: white
   }
@@ -317,4 +347,5 @@
     width: 100%;
     height: 300px;
   }
+
 </style>
