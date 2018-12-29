@@ -177,7 +177,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 0;
-    padding: 12px 0;
+    padding: 12px 0 0;
     background: #171a23;
   }
 
@@ -185,18 +185,17 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 14px;
+    font-size: 17px;
     padding-bottom: 8px;
   }
 
   #nav li.active {
-    color: blue;
-    border-bottom: 2px solid blue;
+    color: #2474d6;
+    border-bottom: 2px solid #2474d6;
   }
 
   #nav img {
-    height: 14px;
-    background: white;
+    height: 17px;
   }
 
   .header button {
