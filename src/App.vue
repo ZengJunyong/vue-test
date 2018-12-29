@@ -28,7 +28,7 @@
     </div>
     <table v-else>
       <tr class="header">
-        <th class="float-left">
+        <th>
           <button type="button" @click="cancelSort()">取消排序</button>
         </th>
         <th class="clickable" @click="sort('price')">最新价 <span v-if="price">↑</span><span v-else>↓</span></th>
@@ -202,7 +202,9 @@
     background: #1a2333;
     border: none;
     color: #266bb7;
-    padding: 4px;
+    padding: 4px 6px;
+    font-size: 14px;
+    border-radius: 2px;
   }
 
   table {
@@ -210,20 +212,25 @@
     margin-top: 9px;
     width: 100%;
     font-size: 14px;
-    padding: 12px 0 12px 12px;
+    border-collapse: collapse;
+  }
+
+  th,td{
+    text-align: right;
   }
 
   th {
     padding: 8px 0;
     font-size: 12px;
+    border-bottom: 1px solid #0b0e16;
   }
 
   td {
-    text-align: center;
     padding-bottom: 12px;
+    border-bottom: 1px solid #0c0f17;
   }
 
-  td:first-child {
+  td:first-child,th:first-child {
     text-align: left;
   }
 
