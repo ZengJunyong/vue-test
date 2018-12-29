@@ -217,21 +217,28 @@
 
   th,td{
     text-align: right;
+    height: 35px;
+    box-sizing: border-box;
   }
 
   th {
-    padding: 8px 0;
-    font-size: 12px;
+    padding: 12px 0;
     border-bottom: 1px solid #0b0e16;
   }
 
   td {
+    font-size: 16px;
     padding-bottom: 12px;
     border-bottom: 1px solid #0c0f17;
   }
 
   td:first-child,th:first-child {
     text-align: left;
+    padding-left: 18px;
+  }
+
+  td:last-child,th:last-child {
+    padding-right: 18px;
   }
 
   td span.subtitle {
