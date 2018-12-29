@@ -319,12 +319,13 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    padding: 9px 0;
-    font-size: 14px;
+    padding: 9px 14px;
+    font-size: 15px;
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     background: #171a23;
+    box-sizing: border-box;
   }
 
   .clickable {
