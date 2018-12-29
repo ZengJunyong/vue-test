@@ -207,7 +207,7 @@
 
   table {
     background: #171a23;
-    margin-top: 12px;
+    margin-top: 9px;
     width: 100%;
     font-size: 14px;
     padding: 12px 0 12px 12px;
