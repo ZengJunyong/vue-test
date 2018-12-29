@@ -5,8 +5,14 @@
       <div>自选</div>
       <div><img class="search" src="./assets/search.png"></div>
     </div>
-    <div v-if="global.connectionError" id="connection_error"><a class="check" href="#">检查设置</a> <span><img
-      src="./assets/error.png">网络连接中断，请检查后重试</span></div>
+    <div id="connection_error">
+      <a class="check" href="#">检查设置</a>
+      <div class="info">
+        <img src="./assets/error.png"> 网络连接中断，请检查后重试
+      </div>
+    </div>
+    <!--<div v-if="global.connectionError" id="connection_error"><a class="check" href="#">检查设置</a> <span><img-->
+      <!--src="./assets/error.png">网络连接中断，请检查后重试</span></div>-->
     <ul id="nav">
       <li>全部</li>
       <li>沪深</li>
@@ -146,7 +152,7 @@
   #connection_error {
     background: #4f181e;
     color: gray;
-    font-size: 12px;
+    font-size: 14px;
     padding: 8px 16px;
   }
 
@@ -156,10 +162,14 @@
     color: #425171;
   }
 
+  #connection_error .info {
+    display: flex;
+    align-items: center;
+  }
+
   #connection_error img {
-    width: 14px;
-    margin-right: 8px;
-    background: red;
+    width: 18px;
+    margin-right: 10px;
   }
 
   #nav {
