@@ -241,8 +241,9 @@
   }
 
   td {
-    font-size: 16px;
+    font-size: 17px;
     padding-bottom: 12px;
+    color: #c1c5c4;
     border-bottom: 1px solid #0c0f17;
   }
 
