@@ -65,8 +65,6 @@
         global: window.global,
         price: false, // 按价格排序的升降标志
         percent: false, // 按涨跌幅排序的升降标志
-        sortPrice: false,
-        sortPercent: false,
         stocks: [],
         previousRequest: null
       }
