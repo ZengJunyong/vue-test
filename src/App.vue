@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="top">
-      <div><img src="./assets/email.png"></div>
+      <div><img class="email" src="./assets/email.png"></div>
       <div>自选</div>
-      <div><img src="./assets/search.png"></div>
+      <div><img class="search" src="./assets/search.png"></div>
     </div>
     <div v-if="global.connectionError" id="connection_error"><a class="check" href="#">检查设置</a> <span><img
       src="./assets/error.png">网络连接中断，请检查后重试</span></div>
@@ -109,8 +109,8 @@
 <style>
   #app {
     height: 100%;
-    background: black;
-    color: #babdc2;
+    background: #0d1015;
+    color: #a2a5ab;
     min-width: 320px;
     max-width: 450px;
     width: 100%;
@@ -124,16 +124,23 @@
   #top {
     display: flex;
     justify-content: space-between;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
     padding: 10px;
     background: #171a23;
   }
 
   #top img {
     background: white;
-    height: 18px;
-    margin-top: 3px;
+    height: 20px;
+    margin-top: 5px;
+  }
+
+  #top img.email{
+    margin-left: 9px;
+  }
+
+  #top img.search{
+    margin-right: 9px;
   }
 
   #connection_error {
