@@ -245,7 +245,8 @@
     padding-bottom: 12px;
     color: #c1c5c4;
     border-bottom: 1px solid #0c0f17;
-    padding-top: 6px;
+    padding: 7px 0 7px 0;
+    line-height: 1.7;
   }
 
   td:first-child,th:first-child {
@@ -308,6 +309,10 @@
     font-size: 12px;
     color: rgba(255, 255, 255, 0.42);
     padding: 2px 4px;
+    display: inline-block;
+    line-height: 1;
+    margin-top: 4px;
+    border-radius: 2px;
   }
 
   #bottom {
