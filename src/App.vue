@@ -25,8 +25,8 @@
         <th class="float-left">
           <button type="button" @click="cancelSort()">取消排序</button>
         </th>
-        <th class="clickable" @click="sort('price')">最新价 <span v-if="sortPrice">↑</span><span v-else>↓</span></th>
-        <th class="clickable" @click="sort('percent')">涨跌幅 <span v-if="sortPercent">↑</span><span v-else>↓</span></th>
+        <th class="clickable" @click="sort('price')">最新价 <span v-if="price">↑</span><span v-else>↓</span></th>
+        <th class="clickable" @click="sort('percent')">涨跌幅 <span v-if="percent">↑</span><span v-else>↓</span></th>
       </tr>
       <tr v-for="s in stocks">
         <td>{{s.stockName}}
