@@ -67,7 +67,8 @@
         global: window.global,
         sortPrice: false,
         sortPercent: false,
-        stocks: []
+        stocks: [],
+        previousRequest: null
       }
     },
     mounted () {
@@ -76,7 +77,14 @@
     },
     methods: {
       fetchData () {
-        this.$http.get('./static/data.json').then((res) => {
+        this.$http.get('./static/data.json', {
+          before (request) {
+            if (this.previousRequest) {
+              this.previousRequest.abort()
+            }
+            this.previousRequest = request
+          }
+        }).then((res) => {
           this.stocks = res.data
         })
       },
